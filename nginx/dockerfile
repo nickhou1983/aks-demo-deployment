@@ -1,4 +1,4 @@
-FROM CentOS:7
+FROM centos
 MAINTAINER "Qifeng Hou"
 RUN yum install epel-release -y
 RUN yum install nginx -y
