@@ -1,0 +1,26 @@
+# Create a k8s deployment yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+
+  # Number of pods to create
+  replicas: 1
+
+  # Pod template
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: demogitopsacr01.azurecr.io/nginx
+        ports:
+        - containerPort: 80
