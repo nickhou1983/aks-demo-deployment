@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aksgitea-f301"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aksgitea-f301"
+  template:
+    metadata:
+      labels:
+        app: "aksgitea-f301"
+    spec:
+      containers:
+        - name: "aksgitea-f301"
+          image: "demogitopsacr01.azurecr.io/aksgitea"
+          ports:
+          - containerPort: 80
